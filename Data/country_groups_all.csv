@@ -1,0 +1,218 @@
+id,Country,Group,Group Type,iso2Code,capitalCity,longitude,latitude
+AFG,Afghanistan,South Asia,Region,AF,Kabul,69.1761,34.5228
+ALB,Albania,Europe & Central Asia,Region,AL,Tirane,19.8172,41.3317
+DZA,Algeria,Middle East & North Africa,Region,DZ,Algiers,3.05097,36.7397
+ASM,American Samoa,East Asia & Pacific,Region,AS,Pago Pago,-170.691,-14.2846
+AND,Andorra,Europe & Central Asia,Region,AD,Andorra la Vella,1.5218,42.5075
+AGO,Angola,Sub-Saharan Africa,Region,AO,Luanda,13.242,-8.81155
+ATG,Antigua And Barbuda,Latin America & Caribbean,Region,AG,Saint John's,-61.8456,17.1175
+ARG,Argentina,Latin America & Caribbean,Region,AR,Buenos Aires,-58.4173,-34.6118
+ARM,Armenia,Europe & Central Asia,Region,AM,Yerevan,44.509,40.1596
+ABW,Aruba,Latin America & Caribbean,Region,AW,Oranjestad,-70.0167,12.5167
+AUS,Australia,East Asia & Pacific,Region,AU,Canberra,149.129,-35.282
+AUT,Austria,Europe & Central Asia,Region,AT,Vienna,16.3798,48.2201
+AZE,Azerbaijan,Europe & Central Asia,Region,AZ,Baku,49.8932,40.3834
+BHS,"Bahamas, The",Latin America & Caribbean,Region,BS,Nassau,-77.339,25.0661
+BHR,Bahrain,Middle East & North Africa,Region,BH,Manama,50.5354,26.1921
+BGD,Bangladesh,South Asia,Region,BD,Dhaka,90.4113,23.7055
+BRB,Barbados,Latin America & Caribbean,Region,BB,Bridgetown,-59.6105,13.0935
+BLR,Belarus,Europe & Central Asia,Region,BY,Minsk,27.5766,53.9678
+BEL,Belgium,Europe & Central Asia,Region,BE,Brussels,4.36761,50.8371
+BLZ,Belize,Latin America & Caribbean,Region,BZ,Belmopan,-88.7713,17.2534
+BEN,Benin,Sub-Saharan Africa,Region,BJ,Porto-Novo,2.6323,6.4779
+BMU,Bermuda,North America,Region,BM,Hamilton,-64.706,32.3293
+BTN,Bhutan,South Asia,Region,BT,Thimphu,89.6177,27.5768
+BOL,Bolivia,Latin America & Caribbean,Region,BO,La Paz,-66.1936,-13.9908
+BIH,Bosnia And Herzegovina,Europe & Central Asia,Region,BA,Sarajevo,18.4214,43.8607
+BWA,Botswana,Sub-Saharan Africa,Region,BW,Gaborone,25.9201,-24.6544
+BRA,Brazil,Latin America & Caribbean,Region,BR,Brasilia,-47.9292,-15.7801
+VGB,British Virgin Islands,Latin America & Caribbean,Region,VG,Road Town,-64.623056,18.431389
+BRN,Brunei Darussalam,East Asia & Pacific,Region,BN,Bandar Seri Begawan,114.946,4.94199
+BGR,Bulgaria,Europe & Central Asia,Region,BG,Sofia,23.3238,42.7105
+BFA,Burkina Faso,Sub-Saharan Africa,Region,BF,Ouagadougou,-1.53395,12.3605
+BDI,Burundi,Sub-Saharan Africa,Region,BI,Bujumbura,29.3639,-3.3784
+CPV,Cabo Verde,Sub-Saharan Africa,Region,CV,Praia,-23.5087,14.9218
+KHM,Cambodia,East Asia & Pacific,Region,KH,Phnom Penh,104.874,11.5556
+CMR,Cameroon,Sub-Saharan Africa,Region,CM,Yaounde,11.5174,3.8721
+CAN,Canada,North America,Region,CA,Ottawa,-75.6919,45.4215
+CYM,Cayman Islands,Latin America & Caribbean,Region,KY,George Town,-81.3857,19.3022
+CAF,Central African Republic,Sub-Saharan Africa,Region,CF,Bangui,21.6407,5.63056
+TCD,Chad,Sub-Saharan Africa,Region,TD,N'Djamena,15.0445,12.1048
+CHI,Channel Islands,Europe & Central Asia,Region,JG,_,0,0
+CHL,Chile,Latin America & Caribbean,Region,CL,Santiago,-70.6475,-33.475
+CHN,China,East Asia & Pacific,Region,CN,Beijing,116.286,40.0495
+COL,Colombia,Latin America & Caribbean,Region,CO,Bogota,-74.082,4.60987
+COM,Comoros,Sub-Saharan Africa,Region,KM,Moroni,43.2418,-11.6986
+COD,"Congo, Dem. Rep.",Sub-Saharan Africa,Region,CD,Kinshasa,15.3222,-4.325
+COG,"Congo, Rep.",Sub-Saharan Africa,Region,CG,Brazzaville,15.2662,-4.2767
+CRI,Costa Rica,Latin America & Caribbean,Region,CR,San Jose,-84.0089,9.63701
+CIV,Cote D'Ivoire,Sub-Saharan Africa,Region,CI,Yamoussoukro,-4.0305,5.332
+HRV,Croatia,Europe & Central Asia,Region,HR,Zagreb,15.9614,45.8069
+CUB,Cuba,Latin America & Caribbean,Region,CU,Havana,-82.3667,23.1333
+CUW,Curacao,Latin America & Caribbean,Region,CW,Willemstad,0,0
+CYP,Cyprus,Europe & Central Asia,Region,CY,Nicosia,33.3736,35.1676
+CZE,Czechia,Europe & Central Asia,Region,CZ,Prague,14.4205,50.0878
+DNK,Denmark,Europe & Central Asia,Region,DK,Copenhagen,12.5681,55.6763
+DJI,Djibouti,Middle East & North Africa,Region,DJ,Djibouti,43.1425,11.5806
+DMA,Dominica,Latin America & Caribbean,Region,DM,Roseau,-61.39,15.2976
+DOM,Dominican Republic,Latin America & Caribbean,Region,DO,Santo Domingo,-69.8908,18.479
+ECU,Ecuador,Latin America & Caribbean,Region,EC,Quito,-78.5243,-0.229498
+EGY,"Egypt, Arab Rep.",Middle East & North Africa,Region,EG,Cairo,31.2461,30.0982
+SLV,El Salvador,Latin America & Caribbean,Region,SV,San Salvador,-89.2073,13.7034
+GNQ,Equatorial Guinea,Sub-Saharan Africa,Region,GQ,Malabo,8.7741,3.7523
+ERI,Eritrea,Sub-Saharan Africa,Region,ER,Asmara,38.9183,15.3315
+EST,Estonia,Europe & Central Asia,Region,EE,Tallinn,24.7586,59.4392
+SWZ,Eswatini,Sub-Saharan Africa,Region,SZ,Mbabane,31.4659,-26.5225
+ETH,Ethiopia,Sub-Saharan Africa,Region,ET,Addis Ababa,38.7468,9.02274
+FRO,Faroe Islands,Europe & Central Asia,Region,FO,Torshavn,-6.91181,61.8926
+FJI,Fiji,East Asia & Pacific,Region,FJ,Suva,178.399,-18.1149
+FIN,Finland,Europe & Central Asia,Region,FI,Helsinki,24.9525,60.1608
+FRA,France,Europe & Central Asia,Region,FR,Paris,2.35097,48.8566
+PYF,French Polynesia,East Asia & Pacific,Region,PF,Papeete,-149.57,-17.535
+GAB,Gabon,Sub-Saharan Africa,Region,GA,Libreville,9.45162,0.38832
+GMB,"Gambia, The",Sub-Saharan Africa,Region,GM,Banjul,-16.5885,13.4495
+GEO,Georgia,Europe & Central Asia,Region,GE,Tbilisi,44.793,41.71
+DEU,Germany,Europe & Central Asia,Region,DE,Berlin,13.4115,52.5235
+GHA,Ghana,Sub-Saharan Africa,Region,GH,Accra,-0.20795,5.57045
+GIB,Gibraltar,Europe & Central Asia,Region,GI,_,0,0
+GRC,Greece,Europe & Central Asia,Region,GR,Athens,23.7166,37.9792
+GRL,Greenland,Europe & Central Asia,Region,GL,Nuuk,-51.7214,64.1836
+GRD,Grenada,Latin America & Caribbean,Region,GD,Saint George's,-61.7449,12.0653
+GUM,Guam,East Asia & Pacific,Region,GU,Agana,144.794,13.4443
+GTM,Guatemala,Latin America & Caribbean,Region,GT,Guatemala City,-90.5328,14.6248
+GIN,Guinea,Sub-Saharan Africa,Region,GN,Conakry,-13.7,9.51667
+GNB,Guinea-Bissau,Sub-Saharan Africa,Region,GW,Bissau,-15.1804,11.8037
+GUY,Guyana,Latin America & Caribbean,Region,GY,Georgetown,-58.1548,6.80461
+HTI,Haiti,Latin America & Caribbean,Region,HT,Port-au-Prince,-72.3288,18.5392
+HND,Honduras,Latin America & Caribbean,Region,HN,Tegucigalpa,-87.4667,15.1333
+HKG,"Hong Kong Sar, China",East Asia & Pacific,Region,HK,_,114.109,22.3964
+HUN,Hungary,Europe & Central Asia,Region,HU,Budapest,19.0408,47.4984
+ISL,Iceland,Europe & Central Asia,Region,IS,Reykjavik,-21.8952,64.1353
+IND,India,South Asia,Region,IN,New Delhi,77.225,28.6353
+IDN,Indonesia,East Asia & Pacific,Region,ID,Jakarta,106.83,-6.19752
+IRN,"Iran, Islamic Rep.",Middle East & North Africa,Region,IR,Tehran,51.4447,35.6878
+IRQ,Iraq,Middle East & North Africa,Region,IQ,Baghdad,44.394,33.3302
+IRL,Ireland,Europe & Central Asia,Region,IE,Dublin,-6.26749,53.3441
+IMN,Isle Of Man,Europe & Central Asia,Region,IM,Douglas,-4.47928,54.1509
+ISR,Israel,Middle East & North Africa,Region,IL,_,35.2035,31.7717
+ITA,Italy,Europe & Central Asia,Region,IT,Rome,12.4823,41.8955
+JAM,Jamaica,Latin America & Caribbean,Region,JM,Kingston,-76.792,17.9927
+JPN,Japan,East Asia & Pacific,Region,JP,Tokyo,139.77,35.67
+JOR,Jordan,Middle East & North Africa,Region,JO,Amman,35.9263,31.9497
+KAZ,Kazakhstan,Europe & Central Asia,Region,KZ,Astana,71.4382,51.1879
+KEN,Kenya,Sub-Saharan Africa,Region,KE,Nairobi,36.8126,-1.27975
+KIR,Kiribati,East Asia & Pacific,Region,KI,Tarawa,172.979,1.32905
+PRK,"Korea, Dem. People'S Rep.",East Asia & Pacific,Region,KP,Pyongyang,125.754,39.0319
+KOR,"Korea, Rep.",East Asia & Pacific,Region,KR,Seoul,126.957,37.5323
+XKX,Kosovo,Europe & Central Asia,Region,XK,Pristina,20.926,42.565
+KWT,Kuwait,Middle East & North Africa,Region,KW,Kuwait City,47.9824,29.3721
+KGZ,Kyrgyz Republic,Europe & Central Asia,Region,KG,Bishkek,74.6057,42.8851
+LAO,Lao Pdr,East Asia & Pacific,Region,LA,Vientiane,102.177,18.5826
+LVA,Latvia,Europe & Central Asia,Region,LV,Riga,24.1048,56.9465
+LBN,Lebanon,Middle East & North Africa,Region,LB,Beirut,35.5134,33.8872
+LSO,Lesotho,Sub-Saharan Africa,Region,LS,Maseru,27.7167,-29.5208
+LBR,Liberia,Sub-Saharan Africa,Region,LR,Monrovia,-10.7957,6.30039
+LBY,Libya,Middle East & North Africa,Region,LY,Tripoli,13.1072,32.8578
+LIE,Liechtenstein,Europe & Central Asia,Region,LI,Vaduz,9.52148,47.1411
+LTU,Lithuania,Europe & Central Asia,Region,LT,Vilnius,25.2799,54.6896
+LUX,Luxembourg,Europe & Central Asia,Region,LU,Luxembourg,6.1296,49.61
+MAC,"Macao Sar, China",East Asia & Pacific,Region,MO,_,113.55,22.1667
+MDG,Madagascar,Sub-Saharan Africa,Region,MG,Antananarivo,45.7167,-20.4667
+MWI,Malawi,Sub-Saharan Africa,Region,MW,Lilongwe,33.7703,-13.9899
+MYS,Malaysia,East Asia & Pacific,Region,MY,Kuala Lumpur,101.684,3.12433
+MDV,Maldives,South Asia,Region,MV,Male,73.5109,4.1742
+MLI,Mali,Sub-Saharan Africa,Region,ML,Bamako,-7.50034,13.5667
+MLT,Malta,Middle East & North Africa,Region,MT,Valletta,14.5189,35.9042
+MHL,Marshall Islands,East Asia & Pacific,Region,MH,Majuro,171.135,7.11046
+MRT,Mauritania,Sub-Saharan Africa,Region,MR,Nouakchott,-15.9824,18.2367
+MUS,Mauritius,Sub-Saharan Africa,Region,MU,Port Louis,57.4977,-20.1605
+MEX,Mexico,Latin America & Caribbean,Region,MX,Mexico City,-99.1276,19.427
+FSM,"Micronesia, Fed. Sts.",East Asia & Pacific,Region,FM,Palikir,158.185,6.91771
+MDA,Moldova,Europe & Central Asia,Region,MD,Chisinau,28.8497,47.0167
+MCO,Monaco,Europe & Central Asia,Region,MC,Monaco,7.41891,43.7325
+MNG,Mongolia,East Asia & Pacific,Region,MN,Ulaanbaatar,106.937,47.9129
+MNE,Montenegro,Europe & Central Asia,Region,ME,Podgorica,19.2595,42.4602
+MAR,Morocco,Middle East & North Africa,Region,MA,Rabat,-6.8704,33.9905
+MOZ,Mozambique,Sub-Saharan Africa,Region,MZ,Maputo,32.5713,-25.9664
+MMR,Myanmar,East Asia & Pacific,Region,MM,Naypyidaw,95.9562,21.914
+NAM,Namibia,Sub-Saharan Africa,Region,NA,Windhoek,17.0931,-22.5648
+NRU,Nauru,East Asia & Pacific,Region,NR,Yaren District,166.920867,-0.5477
+NPL,Nepal,South Asia,Region,NP,Kathmandu,85.3157,27.6939
+NLD,Netherlands,Europe & Central Asia,Region,NL,Amsterdam,4.89095,52.3738
+NCL,New Caledonia,East Asia & Pacific,Region,NC,Noum'ea,166.464,-22.2677
+NZL,New Zealand,East Asia & Pacific,Region,NZ,Wellington,174.776,-41.2865
+NIC,Nicaragua,Latin America & Caribbean,Region,NI,Managua,-86.2734,12.1475
+NER,Niger,Sub-Saharan Africa,Region,NE,Niamey,2.1073,13.514
+NGA,Nigeria,Sub-Saharan Africa,Region,NG,Abuja,7.48906,9.05804
+MKD,North Macedonia,Europe & Central Asia,Region,MK,Skopje,21.4361,42.0024
+MNP,Northern Mariana Islands,East Asia & Pacific,Region,MP,Saipan,145.765,15.1935
+NOR,Norway,Europe & Central Asia,Region,NO,Oslo,10.7387,59.9138
+OMN,Oman,Middle East & North Africa,Region,OM,Muscat,58.5874,23.6105
+PAK,Pakistan,South Asia,Region,PK,Islamabad,72.8,30.5167
+PLW,Palau,East Asia & Pacific,Region,PW,Koror,134.479,7.34194
+PAN,Panama,Latin America & Caribbean,Region,PA,Panama City,-79.5188,8.99427
+PNG,Papua New Guinea,East Asia & Pacific,Region,PG,Port Moresby,147.194,-9.47357
+PRY,Paraguay,Latin America & Caribbean,Region,PY,Asuncion,-57.6362,-25.3005
+PER,Peru,Latin America & Caribbean,Region,PE,Lima,-77.0465,-12.0931
+PHL,Philippines,East Asia & Pacific,Region,PH,Manila,121.035,14.5515
+POL,Poland,Europe & Central Asia,Region,PL,Warsaw,21.02,52.26
+PRT,Portugal,Europe & Central Asia,Region,PT,Lisbon,-9.13552,38.7072
+PRI,Puerto Rico,Latin America & Caribbean,Region,PR,San Juan,-66,18.23
+QAT,Qatar,Middle East & North Africa,Region,QA,Doha,51.5082,25.2948
+ROU,Romania,Europe & Central Asia,Region,RO,Bucharest,26.0979,44.4479
+RUS,Russian Federation,Europe & Central Asia,Region,RU,Moscow,37.6176,55.7558
+RWA,Rwanda,Sub-Saharan Africa,Region,RW,Kigali,30.0587,-1.95325
+WSM,Samoa,East Asia & Pacific,Region,WS,Apia,-171.752,-13.8314
+SMR,San Marino,Europe & Central Asia,Region,SM,San Marino,12.4486,43.9322
+STP,Sao Tome And Principe,Sub-Saharan Africa,Region,ST,Sao Tome,6.6071,0.20618
+SAU,Saudi Arabia,Middle East & North Africa,Region,SA,Riyadh,46.6977,24.6748
+SEN,Senegal,Sub-Saharan Africa,Region,SN,Dakar,-17.4734,14.7247
+SRB,Serbia,Europe & Central Asia,Region,RS,Belgrade,20.4656,44.8024
+SYC,Seychelles,Sub-Saharan Africa,Region,SC,Victoria,55.4466,-4.6309
+SLE,Sierra Leone,Sub-Saharan Africa,Region,SL,Freetown,-13.2134,8.4821
+SGP,Singapore,East Asia & Pacific,Region,SG,Singapore,103.85,1.28941
+SXM,Sint Maarten (Dutch Part),Latin America & Caribbean,Region,SX,Philipsburg,0,0
+SVK,Slovak Republic,Europe & Central Asia,Region,SK,Bratislava,17.1073,48.1484
+SVN,Slovenia,Europe & Central Asia,Region,SI,Ljubljana,14.5044,46.0546
+SLB,Solomon Islands,East Asia & Pacific,Region,SB,Honiara,159.949,-9.42676
+SOM,Somalia,Sub-Saharan Africa,Region,SO,Mogadishu,45.3254,2.07515
+ZAF,South Africa,Sub-Saharan Africa,Region,ZA,Pretoria,28.1871,-25.746
+SSD,South Sudan,Sub-Saharan Africa,Region,SS,Juba,31.6,4.85
+ESP,Spain,Europe & Central Asia,Region,ES,Madrid,-3.70327,40.4167
+LKA,Sri Lanka,South Asia,Region,LK,Colombo,79.8528,6.92148
+KNA,St. Kitts And Nevis,Latin America & Caribbean,Region,KN,Basseterre,-62.7309,17.3
+LCA,St. Lucia,Latin America & Caribbean,Region,LC,Castries,-60.9832,14
+MAF,St. Martin (French Part),Latin America & Caribbean,Region,MF,Marigot,0,0
+VCT,St. Vincent And The Grenadines,Latin America & Caribbean,Region,VC,Kingstown,-61.2653,13.2035
+SDN,Sudan,Sub-Saharan Africa,Region,SD,Khartoum,32.5363,15.5932
+SUR,Suriname,Latin America & Caribbean,Region,SR,Paramaribo,-55.1679,5.8232
+SWE,Sweden,Europe & Central Asia,Region,SE,Stockholm,18.0645,59.3327
+CHE,Switzerland,Europe & Central Asia,Region,CH,Bern,7.44821,46.948
+SYR,Syrian Arab Republic,Middle East & North Africa,Region,SY,Damascus,36.3119,33.5146
+TJK,Tajikistan,Europe & Central Asia,Region,TJ,Dushanbe,68.7864,38.5878
+TZA,Tanzania,Sub-Saharan Africa,Region,TZ,Dodoma,35.7382,-6.17486
+THA,Thailand,East Asia & Pacific,Region,TH,Bangkok,100.521,13.7308
+TLS,Timor-Leste,East Asia & Pacific,Region,TL,Dili,125.567,-8.56667
+TGO,Togo,Sub-Saharan Africa,Region,TG,Lome,1.2255,6.1228
+TON,Tonga,East Asia & Pacific,Region,TO,Nuku'alofa,-175.216,-21.136
+TTO,Trinidad And Tobago,Latin America & Caribbean,Region,TT,Port-of-Spain,-61.4789,10.6596
+TUN,Tunisia,Middle East & North Africa,Region,TN,Tunis,10.21,36.7899
+TUR,Turkiye,Europe & Central Asia,Region,TR,Ankara,32.3606,39.7153
+TKM,Turkmenistan,Europe & Central Asia,Region,TM,Ashgabat,58.3794,37.9509
+TCA,Turks And Caicos Islands,Latin America & Caribbean,Region,TC,Grand Turk,-71.141389,21.4602778
+TUV,Tuvalu,East Asia & Pacific,Region,TV,Funafuti,179.089567,-8.6314877
+UGA,Uganda,Sub-Saharan Africa,Region,UG,Kampala,32.5729,0.314269
+UKR,Ukraine,Europe & Central Asia,Region,UA,Kiev,30.5038,50.4536
+ARE,United Arab Emirates,Middle East & North Africa,Region,AE,Abu Dhabi,54.3705,24.4764
+GBR,United Kingdom,Europe & Central Asia,Region,GB,London,-0.126236,51.5002
+USA,United States,North America,Region,US,Washington D.C.,-77.032,38.8895
+URY,Uruguay,Latin America & Caribbean,Region,UY,Montevideo,-56.0675,-34.8941
+UZB,Uzbekistan,Europe & Central Asia,Region,UZ,Tashkent,69.269,41.3052
+VUT,Vanuatu,East Asia & Pacific,Region,VU,Port-Vila,168.321,-17.7404
+VEN,"Venezuela, Rb",Latin America & Caribbean,Region,VE,Caracas,-69.8371,9.08165
+VNM,Vietnam,East Asia & Pacific,Region,VN,Hanoi,105.825,21.0069
+VIR,Virgin Islands (U.S.),Latin America & Caribbean,Region,VI,Charlotte Amalie,-64.8963,18.3358
+PSE,West Bank And Gaza,Middle East & North Africa,Region,PS,_,0,0
+YEM,"Yemen, Rep.",Middle East & North Africa,Region,YE,Sana'a,44.2075,15.352
+ZMB,Zambia,Sub-Saharan Africa,Region,ZM,Lusaka,28.2937,-15.3982
+ZWE,Zimbabwe,Sub-Saharan Africa,Region,ZW,Harare,31.0672,-17.8312
