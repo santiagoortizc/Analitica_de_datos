@@ -42,8 +42,8 @@ def main():
     col1, col2 = st.columns([2, 1])
 
     with col1:
-        year = st.slider("Año a predecir", min_value=1950,
-                         max_value=2050, value=2025, step=1)
+        year = st.slider("Año a predecir", min_value=2022,
+                         max_value=2030, value=2025, step=1)
         use_uploaded = st.checkbox(
             "Subir archivo .joblib en lugar del modelo en disco", value=False)
         uploaded = None
