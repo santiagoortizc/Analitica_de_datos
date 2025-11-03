@@ -4,6 +4,8 @@ import joblib
 import numpy as np
 import streamlit as st
 from sklearn.preprocessing import PolynomialFeatures
+import pandas as pd
+import matplotlib.pyplot as plt
 
 
 def load_model_from_path(path: str):
@@ -23,75 +25,167 @@ def load_model_from_bytes(uploaded_file):
         return None
 
 
-def predict_birth_rate(model, year: int, degree: int = 2):
-    poly = PolynomialFeatures(degree=degree)
-    # PolynomialFeatures has no learned params, fit_transform on the single sample is fine
-    X_poly = poly.fit_transform(np.array([[year]]))
-    pred = model.predict(X_poly)[0]
-    return float(pred)
+def predict_from_bundle(regressor, poly, last_year, last_pop, start_year=None, end_year=2035):
+    if start_year is None:
+        start_year = last_year + 1
+    years = np.array(list(range(start_year, end_year + 1))).reshape(-1, 1)
+    preds = regressor.predict(poly.transform(years))
+    df = pd.DataFrame({
+        'Year': years.flatten(),
+        'Population': preds
+    })
+    # calcular crecimiento natural aproximado
+    cur = last_pop
+    ng = []
+    for p in df['Population']:
+        ng.append((p - cur) / cur * 100)
+        cur = p
+    df['Natural_Growth'] = ng
+    return df
+
+
+def load_model_with_fallback(default_dir: str = 'modelo'):
+    """Intenta cargar la instancia completa primero; si falla, carga el bundle y devuelve (pop_model, bundle_dict).
+    Devuelve (pop_model_or_None, bundle_or_None, error_message_or_None)
+    """
+    inst_path = os.path.join(default_dir, 'population_model.joblib')
+    bundle_path = os.path.join(default_dir, 'population_model_bundle.joblib')
+
+    # 1) intentar cargar instancia completa
+    if os.path.exists(inst_path):
+        try:
+            inst = joblib.load(inst_path)
+            return inst, None, None
+        except Exception as e:
+            # anotar error y tratar de cargar bundle
+            inst_error = e
+    else:
+        inst_error = None
+
+    # 2) intentar cargar bundle
+    if os.path.exists(bundle_path):
+        try:
+            bundle = joblib.load(bundle_path)
+            return None, bundle, None
+        except Exception as e:
+            return None, None, f"Error cargando bundle: {e} (inst_error: {inst_error})"
+
+    # ninguno existe
+    return None, None, f"No se encontró ni '{inst_path}' ni '{bundle_path}'. Inst error: {inst_error}"
 
 
 def main():
-    st.set_page_config(
-        page_title="Population model — Predict Birth Rate", layout="centered")
-    st.title("Consumir modelo: Predicción de tasa de natalidad")
+    st.set_page_config(page_title="Population projection", layout="centered")
+    st.title("Consumir modelo: Proyección poblacional")
 
     st.markdown(
-        "Este pequeño demo carga `modelo/model.joblib` (guardado desde el notebook) y predice la tasa de natalidad para un año dado usando un polinomio de grado 2.")
+        "Esta app carga el modelo de proyección poblacional generado en el notebook. Intenta cargar primero `modelo/population_model.joblib` (instancia completa) y si no está disponible usa `modelo/population_model_bundle.joblib` (bundle con componentes). También puedes subir tu propio archivo `.joblib` o `.pkl`.")
 
     col1, col2 = st.columns([2, 1])
 
     with col1:
-        year = st.slider("Año a predecir", min_value=2022,
-                         max_value=2030, value=2025, step=1)
+        start_year = st.number_input(
+            "Año inicio de proyección (opcional)", min_value=2022, value=2022)
+        end_year = st.number_input(
+            "Año fin de proyección", min_value=2022, value=2035)
         use_uploaded = st.checkbox(
-            "Subir archivo .joblib en lugar del modelo en disco", value=False)
+            "Subir archivo .joblib/.pkl en lugar del modelo en disco", value=False)
         uploaded = None
         if use_uploaded:
-            uploaded = st.file_uploader("Sube el archivo model.joblib", type=[
+            uploaded = st.file_uploader("Sube el archivo de modelo (.joblib/.pkl)", type=[
                                         "joblib", "pkl"], accept_multiple_files=False)
 
     with col2:
         st.write("\n")
-        st.write("Ruta por defecto:")
-        default_path = os.path.join(os.path.dirname(
-            __file__), "modelo", "model.joblib")
-        st.code(default_path)
+        st.write("Modelos en carpeta `modelo/`:")
+        st.code(os.path.join(os.path.dirname(__file__), "modelo"))
 
-    model = None
+    # Cargar modelo: preferir subida, luego instancia en disco, luego bundle
+    pop_model = None
+    bundle = None
+    load_error = None
+
     if use_uploaded and uploaded is not None:
-        model = load_model_from_bytes(uploaded)
+        try:
+            loaded = load_model_from_bytes(uploaded)
+            # detectar si es instancia (tiene predict) o bundle (dict con keys)
+            if hasattr(loaded, 'predict'):
+                pop_model = loaded
+            elif isinstance(loaded, dict) and 'regressor' in loaded and 'poly' in loaded:
+                bundle = loaded
+            else:
+                # intentar interpretar como bundle with older keys
+                bundle = loaded
+        except Exception as e:
+            load_error = str(e)
     else:
-        if os.path.exists(default_path):
-            try:
-                model = load_model_from_path(default_path)
-            except Exception as e:
-                st.error(f"Error cargando modelo desde {default_path}: {e}")
-        else:
-            st.warning(
-                f"No se encontró el archivo de modelo en la ruta por defecto: {default_path}.\nPuedes subirlo con la casilla 'Subir archivo'.")
+        pop_model, bundle, load_error = load_model_with_fallback(
+            os.path.join(os.path.dirname(__file__), 'modelo'))
 
-    if model is None:
-        st.info(
-            "Aún no hay un modelo cargado. Carga `model.joblib` o sube uno para predecir.")
+    if pop_model is None and bundle is None:
+        st.warning(f"No se pudo cargar un modelo: {load_error}")
         return
 
-    if st.button("Predecir tasa de natalidad"):
-        try:
-            pred = predict_birth_rate(model, year, degree=2)
-            # Aplicar las mismas restricciones del notebook si lo desea
-            pred_clipped = float(np.clip(pred, 0, 100))
+    # Generar proyecciones a partir de la fuente disponible
+    try:
+        if pop_model is not None:
+            df_proj = pop_model.predict(
+                start_year=start_year if start_year is not None else None, end_year=int(end_year))
+            metrics = getattr(pop_model, 'test_metrics', None)
+        else:
+            # bundle expected to contain 'regressor','poly','last_year','last_pop'
+            reg = bundle.get('regressor')
+            poly = bundle.get('poly')
+            last_year = int(bundle.get('last_year'))
+            last_pop = float(bundle.get('last_pop'))
+            df_proj = predict_from_bundle(
+                reg, poly, last_year, last_pop, start_year=start_year if start_year is not None else None, end_year=int(end_year))
+            metrics = None
 
-            st.success(
-                f"Tasa de natalidad estimada (por 1000 hab.) para {year}: {pred_clipped:.3f}")
+    except Exception as e:
+        st.error(f"Error generando proyecciones: {e}")
+        return
 
-            st.markdown("---")
-            st.write("Detalles:")
-            st.write(f"Predicción bruta: {pred:.6f}")
-            st.write("Nota: el notebook original aplicaba un recorte entre 10 y 20 y restricciones de tendencia. Aquí mostramos la predicción del modelo cargado.")
+    st.subheader("Proyecciones")
+    st.write(df_proj)
 
-        except Exception as e:
-            st.error(f"Error al predecir: {e}")
+    # Mostrar métricas si existen
+    if metrics:
+        st.subheader("Métricas de validación (conjunto test)")
+        st.write(metrics)
+
+    # Gráfica: intentar usar datos históricos si están disponibles
+    data_path = os.path.join(os.path.dirname(
+        __file__), 'Data', 'total_population.csv')
+    try:
+        df_pop_raw = pd.read_csv(data_path)
+        countries = df_pop_raw['economy'].tolist()
+        country = st.selectbox('País para comparar histórico', countries,
+                               index=countries.index('COL') if 'COL' in countries else 0)
+
+        years_cols = [c for c in df_pop_raw.columns if c.startswith('YR')]
+        hist_vals = df_pop_raw[df_pop_raw['economy'] ==
+                               country][years_cols].values.flatten().astype(float)
+        hist_years = [int(c.replace('YR', '')) for c in years_cols]
+        df_hist = pd.DataFrame({'Year': hist_years, 'Population': hist_vals})
+
+        fig, ax = plt.subplots(figsize=(10, 5))
+        ax.plot(df_hist['Year'], df_hist['Population'],
+                marker='o', label=f'Histórico ({country})')
+        ax.plot(df_proj['Year'], df_proj['Population'],
+                marker='o', linestyle='--', label='Proyección')
+        ax.set_xlabel('Año')
+        ax.set_ylabel('Población')
+        ax.legend()
+        st.pyplot(fig)
+    except Exception:
+        fig, ax = plt.subplots(figsize=(10, 5))
+        ax.plot(df_proj['Year'], df_proj['Population'],
+                marker='o', linestyle='--', label='Proyección')
+        ax.set_xlabel('Año')
+        ax.set_ylabel('Población')
+        ax.legend()
+        st.pyplot(fig)
 
 
 if __name__ == "__main__":
