@@ -79,7 +79,7 @@ def main():
     st.title("Consumir modelo: Proyección poblacional")
 
     st.markdown(
-        "Esta app carga el modelo de proyección poblacional generado en el notebook. Intenta cargar primero `modelo/population_model.joblib` (instancia completa) y si no está disponible usa `modelo/population_model_bundle.joblib` (bundle con componentes). También puedes subir tu propio archivo `.joblib` o `.pkl`.")
+        "Esta app carga el modelo de proyección poblacional generado en el notebook. Intenta cargar primero `modelo/population_model.joblib` (instancia completa) y si no está disponible usa `modelo/population_model_bundle.joblib` (bundle con componentes).")
 
     col1, col2 = st.columns([2, 1])
 
@@ -88,39 +88,15 @@ def main():
             "Año inicio de proyección (opcional)", min_value=2022, value=2022)
         end_year = st.number_input(
             "Año fin de proyección", min_value=2022, value=2035)
-        use_uploaded = st.checkbox(
-            "Subir archivo .joblib/.pkl en lugar del modelo en disco", value=False)
-        uploaded = None
-        if use_uploaded:
-            uploaded = st.file_uploader("Sube el archivo de modelo (.joblib/.pkl)", type=[
-                                        "joblib", "pkl"], accept_multiple_files=False)
 
     with col2:
         st.write("\n")
         st.write("Modelos en carpeta `modelo/`:")
         st.code(os.path.join(os.path.dirname(__file__), "modelo"))
 
-    # Cargar modelo: preferir subida, luego instancia en disco, luego bundle
-    pop_model = None
-    bundle = None
-    load_error = None
-
-    if use_uploaded and uploaded is not None:
-        try:
-            loaded = load_model_from_bytes(uploaded)
-            # detectar si es instancia (tiene predict) o bundle (dict con keys)
-            if hasattr(loaded, 'predict'):
-                pop_model = loaded
-            elif isinstance(loaded, dict) and 'regressor' in loaded and 'poly' in loaded:
-                bundle = loaded
-            else:
-                # intentar interpretar como bundle with older keys
-                bundle = loaded
-        except Exception as e:
-            load_error = str(e)
-    else:
-        pop_model, bundle, load_error = load_model_with_fallback(
-            os.path.join(os.path.dirname(__file__), 'modelo'))
+    # Cargar modelo: solo desde disco (instancia o bundle)
+    pop_model, bundle, load_error = load_model_with_fallback(
+        os.path.join(os.path.dirname(__file__), 'modelo'))
 
     if pop_model is None and bundle is None:
         st.warning(f"No se pudo cargar un modelo: {load_error}")
