@@ -90,6 +90,9 @@ def main():
         end_year = st.number_input(
             "Año fin de proyección", min_value=2022, value=2035)
 
+        country = st.selectbox('País para comparar histórico', countries,
+                               index=countries.index('COL') if 'COL' in countries else 0)
+
     # with col2:
     #     st.write("\n")
     #     st.write("Modelos en carpeta `modelo/`:")
@@ -137,8 +140,6 @@ def main():
     try:
         df_pop_raw = pd.read_csv(data_path)
         countries = df_pop_raw['economy'].tolist()
-        country = st.selectbox('País para comparar histórico', countries,
-                               index=countries.index('COL') if 'COL' in countries else 0)
 
         years_cols = [c for c in df_pop_raw.columns if c.startswith('YR')]
         hist_vals = df_pop_raw[df_pop_raw['economy'] ==
