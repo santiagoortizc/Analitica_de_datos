@@ -79,15 +79,20 @@ def main():
     st.title("📈 Proyección poblacional")
 
     st.markdown(
-        "Carga el modelo de proyección poblacional entrenado con los datos históricos de población, mortalidad y natalidad")
+        "Carga el modelo de proyección poblacional entrenado con los datos históricos de población, mortalidad y natalidad. ")
 
-    col1 = st.columns([2, 1])
+    col1, col2 = st.columns([2, 1])
 
     with col1:
         start_year = st.number_input(
             "Año inicio de proyección (opcional)", min_value=2022, value=2022)
         end_year = st.number_input(
             "Año fin de proyección", min_value=2022, value=2035)
+
+    # with col2:
+    #     st.write("\n")
+    #     st.write("Modelos en carpeta `modelo/`:")
+    #     st.code(os.path.join(os.path.dirname(__file__), "modelo"))
 
     # Cargar modelo: solo desde disco (instancia o bundle)
     pop_model, bundle, load_error = load_model_with_fallback(
