@@ -150,34 +150,52 @@ def main():
         fig.patch.set_alpha(0.0)  # Fondo de la figura translúcido
         ax.patch.set_alpha(0.0)   # Fondo del área de ploteo translúcido
 
+        # Agregar cuadrícula
+        ax.grid(True, linestyle='--', alpha=0.7, color='gray')
+
         ax.plot(df_hist['Year'], df_hist['Population'],
                 marker='o', label=f'Histórico ({country})')
         ax.plot(df_proj['Year'], df_proj['Population'],
                 marker='o', linestyle='--', label='Proyección')
-        ax.set_xlabel('Año')
-        ax.set_ylabel('Población')
+
+        # Configurar etiquetas y colores
+        ax.set_xlabel('Año', color='white')
+        ax.set_ylabel('Población', color='white')
+        ax.tick_params(colors='white')
 
         # Formato del eje Y sin notación científica
         ax.yaxis.set_major_formatter(
             plt.FuncFormatter(lambda x, p: f'{int(x):,}'))
 
-        ax.legend()
+        # Configurar leyenda con texto blanco
+        legend = ax.legend()
+        plt.setp(legend.get_texts(), color='white')
+
         st.pyplot(fig)
     except Exception:
         fig, ax = plt.subplots(figsize=(10, 5))
         fig.patch.set_alpha(0.0)  # Fondo de la figura translúcido
         ax.patch.set_alpha(0.0)   # Fondo del área de ploteo translúcido
 
+        # Agregar cuadrícula
+        ax.grid(True, linestyle='--', alpha=0.7, color='gray')
+
         ax.plot(df_proj['Year'], df_proj['Population'],
                 marker='o', linestyle='--', label='Proyección')
-        ax.set_xlabel('Año')
-        ax.set_ylabel('Población')
+
+        # Configurar etiquetas y colores
+        ax.set_xlabel('Año', color='white')
+        ax.set_ylabel('Población', color='white')
+        ax.tick_params(colors='white')
 
         # Formato del eje Y sin notación científica
         ax.yaxis.set_major_formatter(
             plt.FuncFormatter(lambda x, p: f'{int(x):,}'))
 
-        ax.legend()
+        # Configurar leyenda con texto blanco
+        legend = ax.legend()
+        plt.setp(legend.get_texts(), color='white')
+
         st.pyplot(fig)
 
 
