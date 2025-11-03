@@ -169,7 +169,7 @@ def main():
 
         # Configurar leyenda con texto blanco
         legend = ax.legend()
-        plt.setp(legend.get_texts(), color='white')
+        plt.setp(legend.get_texts(), color='black')
 
         st.pyplot(fig)
     except Exception:
