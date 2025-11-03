@@ -147,20 +147,36 @@ def main():
         df_hist = pd.DataFrame({'Year': hist_years, 'Population': hist_vals})
 
         fig, ax = plt.subplots(figsize=(10, 5))
+        fig.patch.set_alpha(0.0)  # Fondo de la figura translúcido
+        ax.patch.set_alpha(0.0)   # Fondo del área de ploteo translúcido
+
         ax.plot(df_hist['Year'], df_hist['Population'],
                 marker='o', label=f'Histórico ({country})')
         ax.plot(df_proj['Year'], df_proj['Population'],
                 marker='o', linestyle='--', label='Proyección')
         ax.set_xlabel('Año')
         ax.set_ylabel('Población')
+
+        # Formato del eje Y sin notación científica
+        ax.yaxis.set_major_formatter(
+            plt.FuncFormatter(lambda x, p: f'{int(x):,}'))
+
         ax.legend()
         st.pyplot(fig)
     except Exception:
         fig, ax = plt.subplots(figsize=(10, 5))
+        fig.patch.set_alpha(0.0)  # Fondo de la figura translúcido
+        ax.patch.set_alpha(0.0)   # Fondo del área de ploteo translúcido
+
         ax.plot(df_proj['Year'], df_proj['Population'],
                 marker='o', linestyle='--', label='Proyección')
         ax.set_xlabel('Año')
         ax.set_ylabel('Población')
+
+        # Formato del eje Y sin notación científica
+        ax.yaxis.set_major_formatter(
+            plt.FuncFormatter(lambda x, p: f'{int(x):,}'))
+
         ax.legend()
         st.pyplot(fig)
 
